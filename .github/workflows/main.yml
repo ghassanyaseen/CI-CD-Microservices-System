@@ -49,7 +49,7 @@ jobs:
           context: ./Data-Entry
           file: ./Data-Entry/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/Data-Entry:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/data-entry:latest
 
       - name: Build and push authentication-service image
         uses: docker/build-push-action@v5
@@ -57,7 +57,7 @@ jobs:
           context: ./Authentication
           file: ./Authentication/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/Authentication:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/my-authentication:latest
 
       - name: Build and push analytics-service image
         uses: docker/build-push-action@v5
@@ -65,7 +65,7 @@ jobs:
           context: ./Analytics
           file: ./Analytics/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/Analytics:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/my-analytics:latest
 
       - name: Build and push show-results-app image
         uses: docker/build-push-action@v5
@@ -73,4 +73,4 @@ jobs:
           context: ./ShowData
           file: ./ShowData/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/ShowData:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/showdata:latest
